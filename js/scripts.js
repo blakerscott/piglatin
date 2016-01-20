@@ -1,4 +1,7 @@
 var piglatin = function(str) {
+
+  var firstVowel = str.search(/[aeiou].*/);
+
   if (str.substring(0,1) === "a") {
     return str.concat("ay");
   } else if (str.substring(0,1) === "e") {
@@ -10,8 +13,13 @@ var piglatin = function(str) {
   } else if (str.substring(0,1) === "u") {
     return str.concat("ay");
   }
-    else if 
 
+    else if (str.charAt(firstVowel) === "u") {
+      if (str.charAt(firstVowel - 1) === "q") {
+        var firstLetters = str.slice(0,firstVowel + 1);
+      }
+      return str.slice(firstVowel + 1, str.length).concat(firstLetters, "ay");
+    }
 };
 
 
