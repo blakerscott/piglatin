@@ -7,4 +7,8 @@ describe('piglatin', function() {
     expect(piglatin("squeal")).to.equal("ealsquay");
   });
 
+  it("will move all of the first consecutive consonants to the end and add 'ay' for words that start with one or more consonants, including y", function() {
+    expect(piglatin("stable")).to.equal("ablestay");
+  });
+
 });
